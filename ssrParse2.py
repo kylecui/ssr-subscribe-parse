@@ -2,6 +2,7 @@
 # -*- coding=utf-8 -*-
 import requests
 import base64
+import utilities
 
 class ssrParse:
     def __init__(self):
@@ -16,6 +17,7 @@ class ssrParse:
         self.__remarks_base64 = ""
         self.__remarks = ""
         self.__group = ""
+        self.__speed = utilities.Highest_Latency
 
     # data ssr://aGstNS5taXRzd···
     def decode(self, data):
@@ -39,6 +41,7 @@ class ssrParse:
         dict["obfsparam"] = self.__obfsparam
         dict["remarks_base64"] = self.__remarks_base64
         dict["group"] = self.__group
+        dict["speed"] = self.__speed
         return dict
 
     @staticmethod
